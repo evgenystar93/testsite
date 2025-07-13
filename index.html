@@ -59,9 +59,9 @@
         <div class="col-sm-8 pull-right text-right">
           <div class="margin-100">
             <h1>Push me</h1>
-            <h3>And then just Woosh me, till I can get my<em> notification</em></strong>!</h3>
+            <h3>And then just Woosh me, till I can get my <em>notification</em>!</h3>
           </div>
-          <a href="https://static.wikia.nocookie.net/stronghold/images/d/da/%D0%9A%D0%B0%D0%B1%D0%B0%D0%BD_2.jpg/revision/latest?cb=20130920154558&path-prefix=ru" class="btn btn-primary btn-lg" target="_blank">
+          <a href="#" class="btn btn-primary btn-lg" id="unsubscribe-btn">
             Do not subscribe! <i class="fa fa-cloud-download"></i>
           </a>
         </div>
@@ -183,6 +183,17 @@
         })
         .catch((error) => {
           console.error('Error subscribing user:', error);
+        });
+    });
+
+    document.getElementById('unsubscribe-btn').addEventListener('click', function (e) {
+      e.preventDefault();
+      Pushwoosh.setCommunicationEnabled(false)
+        .then(() => {
+          console.log('User unsubscribed from communications.');
+        })
+        .catch((error) => {
+          console.error('Error unsubscribing user:', error);
         });
     });
   </script>
