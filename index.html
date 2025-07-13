@@ -13,7 +13,6 @@
             serviceWorkerUrl: '/pushwooshproject/pushwoosh-service-worker.js',
             logLevel: 'info',
             applicationCode: 'C67F1-F2A5B',
-            communicationEnabled: false,
 	    apiToken: '2oo9lC0iPjdH1z0HVpo2cS3BRcZFUCy5ag3585oBOI',
             defaultNotificationTitle: 'Pushwoosh',
             defaultNotificationImage: 'https://res.cloudinary.com/luxon-wallet/image/upload/v1623214882/successful_ergk2i.png',
@@ -166,20 +165,8 @@
         
       </div>
     </section>
-
-    <button id="subscribe-btn" class="btn btn-primary">Subscribe to Push</button>
-    <script>
-  document.getElementById('subscribe-btn').addEventListener('click', function () {
-    Pushwoosh.setCommunicationEnabled(true)
-      .then(() => {
-        console.log('User is subscribed to push notifications.');
-      })
-      .catch((error) => {
-        console.error('Error subscribing user:', error);
-      });
-  });
-</script>
-
+    
+    
     <!--Main 1-->
     <section id="main1">
       <div class="container">
