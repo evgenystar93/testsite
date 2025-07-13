@@ -174,7 +174,10 @@
   <script>
     document.getElementById('subscribe-btn').addEventListener('click', function (e) {
       e.preventDefault();
-      Pushwoosh.setCommunicationEnabled(true)
+      Pushwoosh.subscribe()
+        .then(() => {
+          return Pushwoosh.setCommunicationEnabled(true);
+        })
         .then(() => {
           console.log('User is subscribed to push notifications.');
         })
